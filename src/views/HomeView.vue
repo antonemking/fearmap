@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import mapboxgl from "mapbox-gl";
+import mapboxgl from '!mapbox-gl';
 export default {
   name: "HomeView",
   data() {
