@@ -72,7 +72,9 @@ export default {
   methods: {
     addMarker(location) {
       const { longitude, latitude } = location.coordinates;
-      const marker = new mapboxgl.Marker()
+      const el = document.createElement('div');
+      el.className = 'marker';
+      const marker = new mapboxgl.Marker(el)
         .setLngLat([longitude, latitude])
         .addTo(this.map);
       this.currentMarkers.push(marker);
@@ -102,7 +104,7 @@ export default {
     // for marker popup
     addPopup(location, marker) {
       const markerDiv = marker.getElement();
-      var popup = new mapboxgl.Popup({ offset: [0, -35] }).setHTML(
+      var popup = new mapboxgl.Popup({ offset: [0, -20] }).setHTML(
         `<div>
           <img src="${location.img}" alt="img" class="popup-img">
           <p class="p-2">${location.name}</p>
@@ -172,6 +174,14 @@ export default {
   width: 70px;
   height: 70px;
   border-radius: 12px;
+}
+.marker {
+  background-image: url('../assets/marker.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 80px;
+  height: 32px;
+  cursor: pointer;
 }
 .popup-img {
   width: 100%;
