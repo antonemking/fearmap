@@ -1,13 +1,13 @@
 <template>
   <div class="header">
     <a href="/" class="logo">FearMap</a>
-    <a href="#" class="link">Fedback</a>
+    <a href="https://twitter.com/AntoneKing" target="_blank" class="link">Feedback</a>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "HeaderBar"
 }
 </script>
 
@@ -22,7 +22,8 @@ export default {
   -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  position: sticky;
+  position: relative;
+  z-index: 1;
 }
 .logo{
   font-weight: 600;
